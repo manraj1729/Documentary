@@ -1,2 +1,2 @@
 # Documentary
-Documenting Progess and storting important Codes,Study Materials.
+Documenting Progess and storing important Codes,Study Materials.
