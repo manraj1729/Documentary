@@ -1,0 +1,36 @@
+
+class Solution{
+public:
+    int minValue(string s, int k){
+       
+       set<char> s1 ;
+       map<char,int> m ;
+       
+       for(int i=0;i<s.size();i++)
+       {
+           s1.insert(s[i]) ;
+           m[s[i]]++;
+       }
+       priority_queue <int> q1 ;
+       for(auto it = s1.begin();it!=s1.end();it++)
+       {
+           q1.push(m[*it]) ;
+       }
+       int ans = 0;
+       while(k--)
+       {
+           int  x = q1.top() ;
+           x-- ;
+           q1.pop() ;
+           q1.push(x) ;
+       }
+       
+       while(q1.size())
+       {
+           ans += q1.top() * q1.top() ;
+           q1.pop() ;
+       }
+       
+       return ans ;
+    }
+};
